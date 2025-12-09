@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmx8jqdy1qtk"]
+
+[ext_resource type="Texture2D" uid="uid://ct4t0nuddw5c5" path="res://Assets/Sprites/StyleBird1/Bird1-1.png" id="1_i8bdw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcegt"]
+atlas = ExtResource("1_i8bdw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnvpi"]
+atlas = ExtResource("1_i8bdw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl8r2"]
+atlas = ExtResource("1_i8bdw")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr33m"]
+atlas = ExtResource("1_i8bdw")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xf4a6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcegt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dnvpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl8r2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr33m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pfwoh"]
+radius = 7.0
+
+[node name="Bird" type="CharacterBody2D"]
+
+[node name="BirdAnim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xf4a6")
+frame_progress = 0.713918
+
+[node name="BirdCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pfwoh")
