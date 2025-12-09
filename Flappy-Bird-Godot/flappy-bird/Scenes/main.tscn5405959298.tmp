@@ -17,24 +17,24 @@ script = ExtResource("3_8gbba")
 [node name="FloorVisuals" type="Node2D" parent="."]
 script = ExtResource("3_jjvhh")
 
-[node name="FloorSprite2" type="Sprite2D" parent="FloorVisuals"]
-position = Vector2(241.99998, 785)
-scale = Vector2(1.5357143, 1)
-texture = ExtResource("1_jjgbg")
-
-[node name="FloorSprite1" type="Sprite2D" parent="FloorVisuals"]
-position = Vector2(-274, 785)
-scale = Vector2(1.5357143, 1)
-texture = ExtResource("1_jjgbg")
-
-[node name="FloorSprite3" type="Sprite2D" parent="FloorVisuals"]
-position = Vector2(757, 785)
-scale = Vector2(1.5357143, 1)
-texture = ExtResource("1_jjgbg")
-
 [node name="Floor" type="StaticBody2D" parent="FloorVisuals"]
 position = Vector2(24, 785)
 
 [node name="FloorCollider" type="CollisionShape2D" parent="FloorVisuals/Floor"]
 position = Vector2(218, -14.5)
 shape = SubResource("RectangleShape2D_bo1nx")
+
+[node name="FloorSprite2" type="Sprite2D" parent="FloorVisuals/Floor"]
+position = Vector2(217.99998, 0)
+scale = Vector2(1.5357143, 1)
+texture = ExtResource("1_jjgbg")
+
+[node name="FloorSprite1" type="Sprite2D" parent="FloorVisuals/Floor"]
+position = Vector2(-298, 0)
+scale = Vector2(1.5357143, 1)
+texture = ExtResource("1_jjgbg")
+
+[node name="FloorSprite3" type="Sprite2D" parent="FloorVisuals/Floor"]
+position = Vector2(733, 0)
+scale = Vector2(1.5357143, 1)
+texture = ExtResource("1_jjgbg")
