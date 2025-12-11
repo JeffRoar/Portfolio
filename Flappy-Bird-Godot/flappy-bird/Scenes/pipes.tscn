@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8j68fewfhjb2"]
+
+[ext_resource type="Script" uid="uid://grdvf5py52cb" path="res://Scenes/pipes.gd" id="1_7ktcp"]
+[ext_resource type="Texture2D" uid="uid://bim5xbhuyvhax" path="res://Assets/Sprites/pipe-green.png" id="1_uhra5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ktcp"]
+size = Vector2(46, 586)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ws3sl"]
+size = Vector2(46, 587)
+
+[node name="Pipes" type="Node2D"]
+script = ExtResource("1_7ktcp")
+
+[node name="Pipe_Top" type="StaticBody2D" parent="."]
+position = Vector2(243, 160)
+rotation = 3.1415927
+
+[node name="Sprite2D" type="Sprite2D" parent="Pipe_Top"]
+position = Vector2(1.1714653e-05, 134)
+scale = Vector2(1, 1.8399999)
+texture = ExtResource("1_uhra5")
+
+[node name="TopPipeCollider" type="CollisionShape2D" parent="Pipe_Top"]
+position = Vector2(0, 134.00002)
+shape = SubResource("RectangleShape2D_7ktcp")
+
+[node name="Pipe_Bottom" type="StaticBody2D" parent="."]
+position = Vector2(244, 639)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Pipe_Bottom"]
+position = Vector2(0, 133)
+scale = Vector2(1, 1.8399999)
+texture = ExtResource("1_uhra5")
+
+[node name="BottomPipeCollider" type="CollisionShape2D" parent="Pipe_Bottom"]
+position = Vector2(0, 133.5)
+shape = SubResource("RectangleShape2D_ws3sl")
