@@ -1,38 +1,68 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8j68fewfhjb2"]
+[gd_scene load_steps=6 format=3 uid="uid://b8j68fewfhjb2"]
 
-[ext_resource type="Script" uid="uid://grdvf5py52cb" path="res://Scenes/pipes.gd" id="1_7ktcp"]
+[ext_resource type="Script" uid="uid://grdvf5py52cb" path="res://Scripts/pipes.gd" id="1_7ktcp"]
 [ext_resource type="Texture2D" uid="uid://bim5xbhuyvhax" path="res://Assets/Sprites/pipe-green.png" id="1_uhra5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ktcp"]
 size = Vector2(46, 586)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ws3sl"]
-size = Vector2(46, 587)
+size = Vector2(48, 647)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3813"]
+size = Vector2(19, 100)
 
 [node name="Pipes" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_7ktcp")
 
-[node name="Pipe_Top" type="StaticBody2D" parent="."]
+[node name="Pipe_Top" type="StaticBody2D" parent="." groups=["pipes"]]
 position = Vector2(243, 160)
 rotation = 3.1415927
 
-[node name="Sprite2D" type="Sprite2D" parent="Pipe_Top"]
-position = Vector2(1.1714653e-05, 134)
-scale = Vector2(1, 1.8399999)
+[node name="TopPipeSprite1" type="Sprite2D" parent="Pipe_Top"]
+position = Vector2(2.7007874e-05, 283)
+scale = Vector2(1, 0.9112114)
+texture = ExtResource("1_uhra5")
+
+[node name="TopPipeSprite2" type="Sprite2D" parent="Pipe_Top"]
+position = Vector2(1.7741062e-05, 177)
+scale = Vector2(1, 0.9112114)
+texture = ExtResource("1_uhra5")
+
+[node name="TopPipeSprite3" type="Sprite2D" parent="Pipe_Top"]
+position = Vector2(1.1307309e-06, -13)
+scale = Vector2(1, 0.9112114)
 texture = ExtResource("1_uhra5")
 
 [node name="TopPipeCollider" type="CollisionShape2D" parent="Pipe_Top"]
 position = Vector2(0, 134.00002)
 shape = SubResource("RectangleShape2D_7ktcp")
 
-[node name="Pipe_Bottom" type="StaticBody2D" parent="."]
+[node name="Pipe_Bottom" type="StaticBody2D" parent="." groups=["pipes"]]
 position = Vector2(244, 639)
 
-[node name="Sprite2D2" type="Sprite2D" parent="Pipe_Bottom"]
-position = Vector2(0, 133)
-scale = Vector2(1, 1.8399999)
+[node name="BottomPipeSprite1" type="Sprite2D" parent="Pipe_Bottom"]
+position = Vector2(-1, 281)
+scale = Vector2(1, 0.9112114)
+texture = ExtResource("1_uhra5")
+
+[node name="BottomPipeSprite2" type="Sprite2D" parent="Pipe_Bottom"]
+position = Vector2(-1, 145)
+scale = Vector2(1, 0.9112114)
+texture = ExtResource("1_uhra5")
+
+[node name="BottomPipeSprite3" type="Sprite2D" parent="Pipe_Bottom"]
+position = Vector2(-1, -75)
+scale = Vector2(1, 0.9112114)
 texture = ExtResource("1_uhra5")
 
 [node name="BottomPipeCollider" type="CollisionShape2D" parent="Pipe_Bottom"]
-position = Vector2(0, 133.5)
+position = Vector2(-1, 103.5)
 shape = SubResource("RectangleShape2D_ws3sl")
+
+[node name="ScoreZone" type="Area2D" parent="."]
+
+[node name="ScoreZoneCollider" type="CollisionShape2D" parent="ScoreZone"]
+position = Vector2(259.5, 369)
+shape = SubResource("RectangleShape2D_l3813")
