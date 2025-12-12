@@ -77,11 +77,10 @@ process_mode = 3
 
 [node name="GameOverImage" type="TextureRect" parent="UI"]
 visible = false
-anchors_preset = -1
-anchor_left = 0.3
-anchor_top = 0.47375
-anchor_right = 0.7
-anchor_bottom = 0.52625
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_344ge")
@@ -89,12 +88,10 @@ stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="StartGameImage" type="TextureRect" parent="UI"]
-visible = false
-anchors_preset = -1
-anchor_left = 0.30833334
-anchor_top = 0.333125
-anchor_right = 0.69166666
-anchor_bottom = 0.666875
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_ynf5e")

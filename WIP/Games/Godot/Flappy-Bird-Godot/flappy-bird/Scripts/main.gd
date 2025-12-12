@@ -45,12 +45,17 @@ func _on_bird_died():
     get_tree().paused = true
     game_over_image.visible = true
     
+    #move score display
+    $ScoreDisplay.position = Vector2(257,291)
+    $ScoreDisplay.scale = Vector2(2,2)
+    
 func _input(event: InputEvent) -> void:
     if get_tree().paused and start_game_image.visible:
         if event.is_action_pressed("Flap"):
             start_game_image.visible = false
             get_tree().paused = false
-            
+            $ScoreDisplay.position = Vector2(257,40)
+            $ScoreDisplay.scale = Vector2(2,2)
     
 func _on_pipe_scored():
     score += 1
@@ -58,3 +63,5 @@ func _on_pipe_scored():
     var ones = score % 10
     digit1.texture = digit_textures[ones]
     digit2.texture = digit_textures[tens]
+    
+    
